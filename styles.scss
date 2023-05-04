@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300|Raleway+Dots|Lato:300|Inconsolata|Montserrat);
+@import "./media-queries";
+$title: green;
+$header: #5371e1;
+$detail: white;
+$highlight: #5371e1;
+$text: #ffffff;
+$leftBg: #14213d;
+
+body {
+  letter-spacing: 2px;
+  font-family: "apercu", sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  line-height: 1.5;
+  color: white;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 2px;
+  color: gray;
+
+  p {
+    color: gray;
+    letter-spacing: 1px;
+  }
+}
+
+#left {
+  color: white;
+  left: 0;
+  background: $leftBg;
+  min-width: 20%;
+  width: 20%;
+  float: left;
+  width: min-content;
+
+  @include mobile {
+    width: 100%;
+    height: fit-content;
+    background: white;
+    color: black;
+    padding: 10px;
+    margin-top: 20px;
+  }
+}
+
+#right {
+  float: left;
+  right: 0;
+  width: 55%;
+  padding: 2px 60px;
+
+  #rightTitle {
+    padding: 5px 0px;
+    color: #202121;
+    font-weight: bolder;
+  }
+
+  @include mobile {
+    width: 100%;
+    padding: 40px;
+    margin-top: 20px;
+    height: fit-content;
+  }
+}
+
+.centered {
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.centered img {
+  margin-bottom: 2px;
+  justify-content: center;
+  width: 150px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.skills {
+  // max-width: 50%;
+  // margin: 2px auto;
+  text-align: left;
+
+  .headerText {
+    margin: 5px 2px;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .languageBox {
+    margin: 2px;
+    padding: 0px 25px;
+  }
+
+  .hr-text {
+    font-size: 5px;
+    position: relative;
+    border: 0;
+    height: 1em;
+    background-color: transparent;
+    width: 100%;
+
+    &:before {
+      content: "";
+      background: linear-gradient(to right, transparent, $detail, transparent);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+    }
+
+    &:after {
+      content: attr(data-content);
+      position: relative;
+      display: inline-block;
+      padding: 0 0.5em;
+      line-height: 1.5em;
+      color: $title;
+      background-color: #14213d;
+    }
+  }
+
+  li {
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  i {
+    font-size: 7px;
+  }
+
+  a {
+    color: inherit;
+    /* blue colors for links too */
+    text-decoration: inherit;
+    /* no underline */
+  }
+}
+
+#download-button {
+  background-color: tomato;
+  border-color: tomato;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+#download-button:hover {
+  background-color: white;
+  color: tomato;
+  cursor: pointer;
+}
